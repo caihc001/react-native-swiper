@@ -662,7 +662,8 @@ export default class extends Component {
   }
 
   renderScrollView = pages => {
-    if (Platform.OS === 'ios') {
+    // fix android bug that sometimes ViewPagerAndroid may not show up; only use ScrollView
+    if (Platform.OS === 'ios' || true) {
       return (
         <ScrollView ref={this.refScrollView}
           {...this.props}
