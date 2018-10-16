@@ -462,7 +462,8 @@ export default class extends Component {
     if (state.dir === 'x') x = diff * state.width
     if (state.dir === 'y') y = diff * state.height
 
-    if (Platform.OS !== 'ios') {
+    // all use scrollTo
+    if (Platform.OS !== 'ios' && false) {
       this.scrollView && this.scrollView[animated ? 'setPage' : 'setPageWithoutAnimation'](diff)
     } else {
       this.scrollView && this.scrollView.scrollTo({ x, y, animated })
